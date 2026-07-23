@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Data Processing Contract Auditor — Capstone</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- Decorative background shards (SDAIA-style) -->
+<div class="shards" aria-hidden="true">
+  <span class="shard s-gold"></span>
+  <span class="shard s-green"></span>
+  <span class="shard s-peri"></span>
+  <span class="shard s-navy"></span>
+</div>
+
+<div class="deck" id="deck">
+
+  <!-- ========================================================== -->
+  <!-- SLIDE 1 — OVERVIEW / COVER                                  -->
+  <!-- ========================================================== -->
+  <section class="slide slide--cover active" id="s-cover" aria-label="Overview">
+    <div class="cover">
+      <div class="cover__text">
+        <h1 class="cover__title">Data Processing<br />Contract Auditor</h1>
+        <p class="cover__subtitle">AI-Powered Contract Compliance Review</p>
+        <p class="cover__line">From contract clauses to traceable compliance findings.</p>
+        <p class="cover__program">Capstone Project · Advanced Agentic AI Systems Engineering (AAASE) Program</p>
+
+        <div class="cover__meta">
+          <div class="meta">
+            <span class="meta__label">Team</span>
+            <span class="meta__value">Muneera AlSaeed · Shaikha AlKhathlan</span>
+          </div>
+          <div class="meta">
+            <span class="meta__label">Date</span>
+            <span class="meta__value">23 July 2026</span>
+          </div>
+          <div class="meta">
+            <span class="meta__label">Organization</span>
+            <span class="meta__value">SDAIA Academy</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cover__visual" aria-hidden="true">
+        <svg viewBox="0 0 300 300" class="cover-svg" role="img" aria-label="Contract and shield illustration">
+          <g class="doc">
+            <rect x="48" y="34" width="150" height="196" rx="10" class="doc__page" />
+            <rect x="70" y="62" width="86" height="9" rx="4" class="doc__line lw" />
+            <rect x="70" y="84" width="106" height="6" rx="3" class="doc__line" />
+            <rect x="70" y="100" width="96" height="6" rx="3" class="doc__line" />
+            <rect x="70" y="116" width="106" height="6" rx="3" class="doc__line" />
+            <rect x="70" y="140" width="80" height="6" rx="3" class="doc__line" />
+            <rect x="70" y="156" width="106" height="6" rx="3" class="doc__line" />
+            <rect x="70" y="172" width="70" height="6" rx="3" class="doc__line" />
+            <rect x="70" y="196" width="96" height="6" rx="3" class="doc__line" />
+            <rect x="48" y="34" width="150" height="16" fill="url(#gScan)" class="scan-beam" />
+          </g>
+          <g class="shield">
+            <path d="M212 112 l40 14 v34 c0 30 -17 48 -40 57 c-23 -9 -40 -27 -40 -57 v-34 z" class="shield__body" />
+            <path d="M196 160 l11 11 l23 -25" class="shield__check" />
+          </g>
+          <defs>
+            <linearGradient id="gScan" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#fcbd4c" stop-opacity="0" />
+              <stop offset=".5" stop-color="#fcbd4c" stop-opacity=".75" />
+              <stop offset="1" stop-color="#fcbd4c" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+    </div>
+    <p class="cover__disclaimer">Prototype — supports contract review and does not replace professional legal or privacy assessment.</p>
+  </section>
+
+  <!-- ========================================================== -->
+  <!-- SLIDE 2 — THE PROBLEM                                       -->
+  <!-- ========================================================== -->
+  <section class="slide" id="s-problem" aria-label="The Problem">
+    <h2 class="slide__title">The Problem</h2>
+    <div class="slide__body">
+      <div class="prob-flow" aria-hidden="true">
+        <span class="pf-pill">Data-processing contract</span>
+        <span class="pf-arrow">→</span>
+        <span class="pf-pill">Manual privacy review</span>
+        <span class="pf-arrow">→</span>
+        <span class="pf-pill pf-pill--warn">Slow · inconsistent · hard to trace</span>
+      </div>
+
+      <div class="prob-main">
+        <div class="prob-illus" aria-hidden="true">
+          <svg viewBox="0 0 220 240" role="img" aria-label="Contract under manual review">
+            <rect x="34" y="18" width="140" height="188" rx="12" class="pi-page" />
+            <rect x="56" y="46" width="78" height="9" rx="4" class="pi-line pi-title" />
+            <rect x="56" y="70" width="96" height="6" rx="3" class="pi-line" />
+            <rect x="56" y="86" width="88" height="6" rx="3" class="pi-line" />
+            <rect x="56" y="102" width="96" height="6" rx="3" class="pi-line" />
+            <rect x="56" y="124" width="70" height="6" rx="3" class="pi-line" />
+            <rect x="56" y="140" width="96" height="6" rx="3" class="pi-line" />
+            <rect x="56" y="156" width="60" height="6" rx="3" class="pi-line" />
+            <rect x="56" y="178" width="88" height="6" rx="3" class="pi-line" />
+            <circle cx="150" cy="168" r="34" class="pi-glass" />
+            <line x1="174" y1="192" x2="196" y2="214" class="pi-glass-handle" />
+          </svg>
+        </div>
+
+        <div class="prob-cards">
+          <article class="pcard">
+            <div class="pcard__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M12 2h0M9 2h6"/></svg>
+            </div>
+            <div>
+              <h3>Time-consuming review</h3>
+              <p>Privacy teams read long contracts and compare many clauses against regulatory requirements — by hand.</p>
+            </div>
+          </article>
+          <article class="pcard">
+            <div class="pcard__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 9v4m0 4h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
+            </div>
+            <div>
+              <h3>Missing or unclear clauses</h3>
+              <p>Purpose, retention, deletion, security, and data-transfer terms may be absent or ambiguous.</p>
+            </div>
+          </article>
+          <article class="pcard">
+            <div class="pcard__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 3v12m0 0a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm12-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm0 0v3a6 6 0 0 1-6 6H9"/></svg>
+            </div>
+            <div>
+              <h3>Inconsistent decisions</h3>
+              <p>Different reviewers read the same clause differently — results are hard to standardize and trace.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <p class="prob-close">Organizations need a faster, more consistent way to identify contract risks — while keeping the final decision under human oversight.</p>
+    </div>
+  </section>
+
+  <!-- ========================================================== -->
+  <!-- SLIDE 3 — AGENTIC BEHAVIOR                                  -->
+  <!-- ========================================================== -->
+  <section class="slide" id="s-agentic" aria-label="Agentic Behavior">
+    <h2 class="slide__title">What Makes It Agentic?
+      <span class="title-actions">
+        <button class="btn btn--gold" id="btnAgentPlay">▶ Play Agent Loop</button>
+        <button class="btn btn--ghost" id="btnAgentReset">Reset</button>
+      </span>
+    </h2>
+    <div class="slide__body">
+      <div class="agentic">
+        <div class="ag-diagram" id="agDiagram">
+          <svg class="ag-edges" id="agEdges" aria-hidden="true"></svg>
+          <div class="ag-flow">
+            <button class="agnode ag-state" data-id="state">Shared State<small>remembers each step</small></button>
+            <button class="agnode ag-role" data-id="analysis">Compliance Analysis Agent<small>evaluates vs policies</small></button>
+            <button class="agnode ag-role" data-id="reviewer">Reviewer Agent<small>scores quality</small></button>
+            <button class="agnode ag-gate" data-id="gate">Quality Gate<small>score high enough?</small></button>
+            <div class="ag-branch">
+              <button class="agnode ag-retry" data-id="retry">Retry Analysis<small>with feedback</small></button>
+              <button class="agnode ag-report" data-id="report">Generate Report<small>verdict + report</small></button>
+            </div>
+          </div>
+        </div>
+
+        <aside class="ag-panel" id="agPanel" aria-live="polite">
+          <div id="agPanelBody"></div>
+        </aside>
+      </div>
+
+      <div class="ag-behaviors" aria-label="Agentic behaviors">
+        <span class="agb"><i class="agb-dot d-state"></i>Shared State — remembers what happened between steps</span>
+        <span class="agb"><i class="agb-dot d-role"></i>Specialized Roles — separate analyze &amp; review</span>
+        <span class="agb"><i class="agb-dot d-gate"></i>Conditional Routing — next step depends on the result</span>
+        <span class="agb"><i class="agb-dot d-retry"></i>Revision Loop — feedback re-fed, bounded by MAX_RETRIES</span>
+      </div>
+      <p class="verified-note">Human-review note: high-risk or uncertain findings are <em>flagged</em> for human review, but the current implementation does not yet pause and resume the graph for a reviewer decision.</p>
+    </div>
+  </section>
+
+  <!-- ========================================================== -->
+  <!-- SLIDE 3 — ARCHITECTURE                                      -->
+  <!-- ========================================================== -->
+  <section class="slide" id="s-arch" aria-label="Architecture">
+    <h2 class="slide__title">System Architecture
+      <span class="title-actions">
+        <button class="btn btn--gold" id="btnPlay">▶ Play Flow</button>
+        <button class="btn btn--ghost" id="btnReset">Reset</button>
+      </span>
+    </h2>
+    <div class="slide__body">
+      <div class="arch" id="arch">
+        <svg class="arch__edges" id="archEdges" aria-hidden="true"></svg>
+        <div class="arch__flow">
+          <div class="arch__row">
+            <button class="node n-ui" data-id="browser">Browser UI<small>PDF upload, results view</small></button>
+          </div>
+          <div class="arch__row">
+            <button class="node n-svc" data-id="fastapi">FastAPI service<small>/audit, /metrics, /health</small></button>
+          </div>
+          <div class="arch__row">
+            <button class="node n-sec" data-id="security">Security guard<small>Type, size, validity</small></button>
+          </div>
+
+          <div class="arch__orch" id="orch">
+            <span class="arch__orch-label">LangGraph orchestrator</span>
+            <div class="arch__orch-row">
+              <button class="node n-agent" data-id="pdf">PDF parser<small>Extract text</small></button>
+              <button class="node n-agent" data-id="analysis">Analysis agent<small>Compare vs policies</small></button>
+              <button class="node n-agent" data-id="reviewer">Reviewer<small>Scores quality</small></button>
+            </div>
+            <span class="arch__retry" id="retryLabel">↺ Retry if score below threshold</span>
+            <button class="node n-verdict" data-id="verdict">Verdict &amp; report</button>
+          </div>
+
+          <div class="arch__row arch__data">
+            <button class="node n-db" data-id="minio">MinIO storage<small>Contract files</small></button>
+            <button class="node n-db" data-id="chromadb">ChromaDB<small>Policy vectors</small></button>
+            <button class="node n-db" data-id="postgres">PostgreSQL<small>Audit trail</small></button>
+          </div>
+          <div class="arch__row">
+            <button class="node n-obs" data-id="prometheus">Prometheus metrics</button>
+          </div>
+        </div>
+
+        <aside class="arch__panel" id="archPanel" hidden aria-live="polite">
+          <button class="arch__panel-close" id="panelClose" aria-label="Close panel">✕</button>
+          <div id="panelBody"></div>
+        </aside>
+      </div>
+
+      <div class="arch-bottom">
+        <div class="legend">
+          <span><i class="lg lg-ui"></i>Interface</span>
+          <span><i class="lg lg-svc"></i>Service</span>
+          <span><i class="lg lg-sec"></i>Security</span>
+          <span><i class="lg lg-agent"></i>Agent node</span>
+          <span><i class="lg lg-db"></i>Storage</span>
+          <span><i class="lg lg-obs"></i>Observability</span>
+        </div>
+        <p class="impl-note"><strong>Current implementation:</strong> built in <code>capstone_contract_audit_v2.py</code> (FastAPI · LangGraph · pypdf · ChromaDB · MinIO · PostgreSQL · Prometheus), shipped with <code>docker-compose.yml</code>. A <code>MOCK=1</code> mode runs the full flow offline for the demo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================== -->
+  <!-- SLIDE 4 — CODE WORKFLOW                                     -->
+  <!-- ========================================================== -->
+  <section class="slide" id="s-workflow" aria-label="Workflow">
+    <h2 class="slide__title">Agent Workflow
+      <span class="title-actions"><button class="btn btn--gold" id="btnRunWf">▶ Run Demo</button></span>
+    </h2>
+    <div class="slide__body">
+      <div class="stepper" id="stepper" role="tablist" aria-label="Workflow steps"></div>
+      <div class="wf-grid">
+        <div class="card wf-detail" id="wfDetail" aria-live="polite"></div>
+        <div class="card wf-state">
+          <div class="code-head"><span class="d red"></span><span class="d gold"></span><span class="d green"></span><span class="code-title">workflow_state</span></div>
+          <pre class="code" id="wfState"></pre>
+        </div>
+      </div>
+      <div class="wf-nav">
+        <button class="btn btn--ghost" id="wfPrev">← Previous</button>
+        <span class="wf-count" id="wfCount"></span>
+        <button class="btn btn--ghost" id="wfNext">Next →</button>
+      </div>
+      <p class="verified-note">Node, function and state-field names verified from <code>capstone_contract_audit_v2.py</code> (LangGraph: pdf_parser → compliance_analysis_agent → reviewer_evaluator → generate_report, with review_gate retry).</p>
+    </div>
+  </section>
+
+  <!-- ========================================================== -->
+  <!-- SLIDE 5 — OUTPUT                                            -->
+  <!-- ========================================================== -->
+  <section class="slide" id="s-output" aria-label="Output">
+    <h2 class="slide__title">Compliance Report <span class="demo-flag run-flag">Actual run · 0d869013f23f</span></h2>
+    <div class="slide__body">
+      <div class="out-grid">
+        <div class="out-left">
+          <div class="card report-summary" id="reportSummary"></div>
+          <div class="out-toggle" role="tablist" aria-label="Output views">
+            <button class="seg is-active" data-view="report" role="tab">Report</button>
+            <button class="seg" data-view="json" role="tab">Output schema (JSON)</button>
+          </div>
+        </div>
+        <div class="out-right">
+          <div class="out-view is-active" id="view-report"></div>
+          <div class="out-view" id="view-json"></div>
+        </div>
+      </div>
+      <p class="verified-note">Actual recorded run <code>0d869013f23f</code> (23 Jul 2026, demo/MOCK mode) — 91% compliance, 38 policies, reviewer score 9 after 1 retry, total cost $0.009555. Verdict: Human Review Required.</p>
+    </div>
+  </section>
+
+  <!-- ========================================================== -->
+  <!-- SLIDE 6 — THANK YOU                                         -->
+  <!-- ========================================================== -->
+  <section class="slide slide--thanks" id="s-thanks" aria-label="Thank You">
+    <div class="thanks">
+      <h1 class="thanks__title">Thank You</h1>
+      <p class="thanks__line">Data Processing Contract Auditor — an evidence-based agent for data-processing contract compliance.</p>
+
+      <div class="thanks__team">
+        <div class="tperson">
+          <span class="tperson__name">Muneera AlSaeed</span>
+          <span class="tperson__handle">@mneerh</span>
+        </div>
+        <div class="tperson">
+          <span class="tperson__name">Shaikha AlKhathlan</span>
+          <span class="tperson__handle">@shiakah27</span>
+        </div>
+      </div>
+
+      <p class="thanks__ack">Special thanks to <strong>SDAIA Academy</strong> and our instructor <strong>Ibrahim Al-Shehri</strong> for their guidance throughout the AAASE Program.</p>
+
+      <div class="thanks__meta">
+        <span>Advanced Agentic AI Systems Engineering Program</span>
+        <span class="sep">·</span>
+        <span>23 July 2026</span>
+        <span class="sep">·</span>
+        <span class="repo">github.com/mneerh/AAASE-CAPSTONE</span>
+      </div>
+
+      <p class="thanks__disclaimer">This prototype supports contract review and does not replace professional legal or privacy assessment.</p>
+    </div>
+  </section>
+
+</div>
+
+<!-- ========================================================== -->
+<!-- GLOBAL FIXED FOOTER                                         -->
+<!-- ========================================================== -->
+<footer class="footer" aria-label="Presentation navigation">
+  <span class="footer__section" id="footSection">01 · OVERVIEW</span>
+  <div class="footer__nav">
+    <button class="fbtn" id="btnHome" title="First slide (Home)" aria-label="First slide">
+      <svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5M5.5 10v9h13v-9"/></svg>
+    </button>
+    <button class="fbtn" id="btnPrev" title="Previous (←)" aria-label="Previous slide">
+      <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>
+    </button>
+    <div class="dots" id="dots" role="tablist" aria-label="Slides"></div>
+    <button class="fbtn" id="btnNext" title="Next (→ / Space)" aria-label="Next slide">
+      <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+    <button class="fbtn" id="btnFull" title="Full screen (F)" aria-label="Toggle full screen">
+      <svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+    </button>
+  </div>
+  <span class="footer__counter" id="footCounter">1 / 7</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
