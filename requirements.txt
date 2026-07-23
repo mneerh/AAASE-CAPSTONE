@@ -1,0 +1,11 @@
+langchain-openai
+langgraph
+chromadb
+pypdf
+python-dotenv
+fastapi
+uvicorn
+python-multipart
+psycopg2-binary
+prometheus_client
+minio
