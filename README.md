@@ -354,9 +354,19 @@ Examples include:
 
 The image below shows the human-readable result interface using demonstration data:
 
-//
+### Approved
 
-> This screenshot demonstrates the interface rendering. It is not an accuracy benchmark or legal validation result.
+![Approved contract audit result](UI_Outputs/Approved.png)
+
+### Human Review Required
+
+![Human review contract audit result](UI_Outputs/Human_Review.png)
+
+### Not Approved
+
+![Not approved contract audit result](UI_Outputs/Not_Approved.png)
+
+
 
 ### Per-policy output shape
 
