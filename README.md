@@ -356,16 +356,15 @@ The image below shows the human-readable result interface using demonstration da
 
 ### Approved
 
-![Approved contract audit result](UI_Outputs/Approved.png)
+![Approved contract audit result](./UI%20_Outputs/Approved.png)
 
 ### Human Review Required
 
-![Human review contract audit result](UI_Outputs/Human_Review.png)
+![Human review contract audit result](./UI%20_Outputs/Human%20Review.png)
 
 ### Not Approved
 
-![Not approved contract audit result](UI_Outputs/Not_Approved.png)
-
+![Not approved contract audit result](./UI%20_Outputs/Not%20Approved.png)
 
 
 ### Per-policy output shape
