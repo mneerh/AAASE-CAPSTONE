@@ -1,0 +1,677 @@
+{
+  "metadata": {
+    "dataset_id": "SA_DATA_PROCESSING_CONTRACT_AUDITOR",
+    "dataset_version": "0.1.0",
+    "project_name": "Data Processing Contract Auditor",
+    "jurisdiction": "Saudi Arabia",
+    "primary_language": "English",
+    "supported_contract_languages": [
+      "English",
+      "Arabic"
+    ],
+    "created_for": "Educational agentic AI capstone prototype",
+    "legal_review_status": "pending_legal_review",
+    "important_note": "The audit policies are operational contract controls derived from official sources. They are not legal opinions. A qualified legal/privacy specialist must validate them before real-world use.",
+    "decision_labels": [
+      "compliant",
+      "non_compliant",
+      "missing",
+      "ambiguous",
+      "not_applicable",
+      "human_review_required"
+    ],
+    "source_documents": [
+      {
+        "document_id": "SA_PDPL",
+        "title": "Personal Data Protection Law",
+        "issuer": "Saudi Data and AI Authority (SDAIA)",
+        "source_type": "law",
+        "extraction_status": "initial_mapping_completed",
+        "url": "https://sdaia.gov.sa/en/SDAIA/about/Documents/Personal%20Data%20English%20V2-23April2023-%20Reviewed-.pdf"
+      },
+      {
+        "document_id": "SA_PDPL_IR",
+        "title": "Implementing Regulations of the Personal Data Protection Law",
+        "issuer": "Saudi Data and AI Authority (SDAIA)",
+        "source_type": "implementing_regulation",
+        "extraction_status": "pending"
+      },
+      {
+        "document_id": "SA_TRANSFER_REG",
+        "title": "Regulation on Personal Data Transfer Outside the Kingdom",
+        "issuer": "Saudi Data and AI Authority (SDAIA)",
+        "source_type": "transfer_regulation",
+        "extraction_status": "pending"
+      },
+      {
+        "document_id": "SA_SCC",
+        "title": "Standard Contractual Clauses for Personal Data Transfer",
+        "issuer": "Saudi Data and AI Authority (SDAIA)",
+        "source_type": "standard_contractual_clauses",
+        "extraction_status": "pending"
+      },
+      {
+        "document_id": "SA_DMPDPS",
+        "title": "Data Management and Personal Data Protection Standards",
+        "issuer": "Saudi Data and AI Authority (SDAIA)",
+        "source_type": "standards",
+        "extraction_status": "pending"
+      }
+    ]
+  },
+  "policies": [
+    {
+      "policy_id": "DATA-01",
+      "name_en": "Defined Processing Purpose",
+      "name_ar": "تحديد غرض معالجة البيانات",
+      "category": "processing_purpose",
+      "applies_to_contract_types": [
+        "data_processing_agreement",
+        "cloud_service_agreement",
+        "data_sharing_agreement",
+        "cross_border_transfer_agreement",
+        "employee_data_vendor_agreement",
+        "marketing_data_processing_agreement"
+      ],
+      "source_support": "direct",
+      "source_references": [
+        {
+          "document_id": "SA_PDPL",
+          "article": "5(1)",
+          "basis_summary": "Changing the processing purpose generally requires the Data Subject's consent unless an exception applies."
+        },
+        {
+          "document_id": "SA_PDPL",
+          "article": "10",
+          "basis_summary": "Personal Data may generally be processed only for the purposes for which it was collected, subject to listed exceptions."
+        },
+        {
+          "document_id": "SA_PDPL",
+          "article": "11(1)",
+          "basis_summary": "The collection purpose must be directly related to the Controller's purposes and must not violate legal provisions."
+        },
+        {
+          "document_id": "SA_PDPL",
+          "article": "13(2)",
+          "basis_summary": "The Data Subject must be informed of the collection purpose and inconsistent later processing is restricted."
+        },
+        {
+          "document_id": "SA_PDPL",
+          "article": "31(2)",
+          "basis_summary": "Processing activity records must include the purpose of processing."
+        }
+      ],
+      "contract_requirement_en": "The contract must define specific processing purposes and restrict the Processor from using Personal Data for unrelated or independently determined purposes.",
+      "contract_requirement_ar": "يجب أن يحدد العقد أغراض المعالجة بشكل واضح، وأن يمنع المعالج من استخدام البيانات الشخصية لأغراض غير مرتبطة أو يحددها بصورة مستقلة.",
+      "required_evidence": [
+        "A specific description of each permitted processing purpose",
+        "A restriction on processing outside the documented purposes",
+        "A change-control or approval mechanism for any new processing purpose"
+      ],
+      "non_compliance_indicators": [
+        "for any business purpose",
+        "for any purpose selected by the vendor",
+        "including any other purpose",
+        "the vendor may change the purpose without approval"
+      ],
+      "decision_rule": {
+        "compliant": "Specific purposes are defined and incompatible use is restricted.",
+        "missing": "No processing purpose is stated.",
+        "non_compliant": "The vendor is granted broad or unrestricted independent use.",
+        "ambiguous": "The purpose is described only through vague phrases such as service improvement."
+      },
+      "default_risk_level": "high",
+      "human_review_triggers": [
+        "Purpose is based on broad legitimate-interest language",
+        "The contract mixes Controller and independent-Controller purposes",
+        "Sensitive Data is processed"
+      ],
+      "requires_additional_sources": [],
+      "embedding_text_en": "Purpose limitation in a data processing contract. The agreement should define the specific purposes for processing personal data and prohibit unrelated or incompatible use.",
+      "legal_review_status": "pending"
+    },
+    {
+      "policy_id": "DATA-02",
+      "name_en": "No Incompatible Secondary Use",
+      "name_ar": "منع استخدام البيانات في غرض آخر غير المحدد",
+      "category": "purpose_limitation",
+      "applies_to_contract_types": [
+        "data_processing_agreement",
+        "cloud_service_agreement",
+        "data_sharing_agreement",
+        "employee_data_vendor_agreement",
+        "marketing_data_processing_agreement"
+      ],
+      "source_support": "direct",
+      "source_references": [
+        {
+          "document_id": "SA_PDPL",
+          "article": "5(1)",
+          "basis_summary": "Personal Data processing and changes to processing purpose generally require consent unless a legal exception applies."
+        },
+        {
+          "document_id": "SA_PDPL",
+          "article": "10",
+          "basis_summary": "Processing for purposes other than the original collection purpose is limited to specified situations."
+        },
+        {
+          "document_id": "SA_PDPL",
+          "article": "13(2)",
+          "basis_summary": "The Data Subject must be informed that subsequent inconsistent processing is restricted."
+        }
+      ],
+      "contract_requirement_en": "The Processor must not use Personal Data for advertising, analytics, product development, model training, sale, or any other secondary purpose unless it is expressly authorized and lawful.",
+      "contract_requirement_ar": "يجب ألا يستخدم المعالج البيانات الشخصية للإعلانات أو التحليلات أو تطوير المنتجات أو تدريب النماذج أو البيع أو أي غرض ثانوي، إلا إذا كان مصرحًا به صراحةً ومشروعًا.",
+      "required_evidence": [
+        "A prohibition on independent secondary use",
+        "A list of expressly permitted secondary uses, if any",
+        "A requirement for documented authorization before adding new purposes"
+      ],
+      "non_compliance_indicators": [
+        "may use data for marketing",
+        "may monetize customer data",
+        "may train models using customer data",
+        "may use data for any commercial purpose"
+      ],
+      "decision_rule": {
+        "compliant": "Secondary use is prohibited or narrowly authorized.",
+        "missing": "The contract does not address secondary use.",
+        "non_compliant": "The vendor may use the data for broad independent purposes.",
+        "ambiguous": "The contract permits improvement or analytics without defining scope."
+      },
+      "default_risk_level": "high",
+      "human_review_triggers": [
+        "AI or model-training use is mentioned",
+        "Marketing use is based on separate consent",
+        "The vendor claims an independent Controller role"
+      ],
+      "requires_additional_sources": [
+        "SA_PDPL_IR"
+      ],
+      "embedding_text_en": "A processor must not use personal data for unrelated secondary purposes such as marketing, monetization, product development, analytics, or AI training without clear authorization and a lawful basis.",
+      "legal_review_status": "pending"
+    },
+    {
+      "policy_id": "DATA-03",
+      "name_en": "Defined Retention Period",
+      "name_ar": "تحديد مدة الاحتفاظ بالبيانات",
+      "category": "data_retention",
+      "applies_to_contract_types": [
+        "data_processing_agreement",
+        "cloud_service_agreement",
+        "data_sharing_agreement",
+        "cross_border_transfer_agreement",
+        "employee_data_vendor_agreement",
+        "marketing_data_processing_agreement"
+      ],
+      "source_support": "partial",
+      "source_references": [
+        {
+          "document_id": "SA_PDPL",
+          "article": "18",
+          "basis_summary": "Personal Data must be destroyed when no longer necessary, subject to specified legal or judicial retention cases."
+        },
+        {
+          "document_id": "SA_PDPL",
+          "article": "31(6)",
+          "basis_summary": "Processing activity records must include the expected Personal Data retention period."
+        },
+        {
+          "document_id": "SA_PDPL",
+          "article": "12",
+          "basis_summary": "The privacy policy must explain storage and destruction."
+        }
+      ],
+      "contract_requirement_en": "The contract should define a retention period or objective retention criteria for each processing purpose and identify any legally required retention exception.",
+      "contract_requirement_ar": "ينبغي أن يحدد العقد مدة الاحتفاظ أو معايير موضوعية لتحديدها لكل غرض معالجة، مع بيان أي استثناء نظامي يوجب الاحتفاظ.",
+      "required_evidence": [
+        "A fixed retention period or objective retention criteria",
+        "A deletion trigger linked to purpose completion or contract termination",
+        "A documented legal-retention exception where applicable"
+      ],
+      "non_compliance_indicators": [
+        "retained indefinitely",
+        "retained for as long as the vendor considers necessary",
+        "no retention limit",
+        "permanent retention"
+      ],
+      "decision_rule": {
+        "compliant": "A clear period or objective criteria and deletion trigger are provided.",
+        "missing": "No retention period or criteria are provided.",
+        "non_compliant": "Indefinite or vendor-discretionary retention is permitted.",
+        "ambiguous": "The contract says only as necessary without defining who determines necessity."
+      },
+      "default_risk_level": "high",
+      "human_review_triggers": [
+        "Legal retention is referenced without identifying the applicable requirement",
+        "Backup retention differs from production-system retention",
+        "Multiple data categories have different retention needs"
+      ],
+      "requires_additional_sources": [
+        "SA_PDPL_IR",
+        "SA_SCC"
+      ],
+      "embedding_text_en": "The contract should state how long personal data is retained, define objective retention criteria, and require deletion when the processing purpose ends unless a documented legal exception applies.",
+      "legal_review_status": "pending"
+    },
+    {
+      "policy_id": "DATA-04",
+      "name_en": "Deletion or Return at End of Processing",
+      "name_ar": "حذف البيانات أو إعادتها بعد انتهاء الغرض",
+      "category": "data_deletion",
+      "applies_to_contract_types": [
+        "data_processing_agreement",
+        "cloud_service_agreement",
+        "data_sharing_agreement",
+        "cross_border_transfer_agreement",
+        "employee_data_vendor_agreement",
+        "marketing_data_processing_agreement"
+      ],
+      "source_support": "partial",
+      "source_references": [
+        {
+          "document_id": "SA_PDPL",
+          "article": "11(4)",
+          "basis_summary": "Collection must cease and previously collected Personal Data must be destroyed when it is no longer necessary."
+        },
+        {
+          "document_id": "SA_PDPL",
+          "article": "18",
+          "basis_summary": "Personal Data must be destroyed without undue delay when no longer necessary, subject to limited retention exceptions."
+        }
+      ],
+      "contract_requirement_en": "At the end of the services or processing purpose, the Processor must delete Personal Data and copies, or return the data when the applicable contract mechanism requires return, subject to documented legal retention.",
+      "contract_requirement_ar": "عند انتهاء الخدمات أو غرض المعالجة، يجب على المعالج حذف البيانات الشخصية ونسخها، أو إعادتها عندما تتطلب الآلية التعاقدية ذلك، مع مراعاة الاحتفاظ النظامي الموثق.",
+      "required_evidence": [
+        "A deletion or return obligation",
+        "A deadline or trigger for deletion",
+        "Coverage of backups and copies",
+        "Written confirmation or certificate of deletion"
+      ],
+      "non_compliance_indicators": [
+        "no deletion is required",
+        "the vendor may retain copies after termination",
+        "data may remain in backups indefinitely",
+        "deletion is at the vendor's sole discretion"
+      ],
+      "decision_rule": {
+        "compliant": "Deletion is required at purpose completion and copies/backups are addressed.",
+        "missing": "No end-of-processing deletion or return clause exists.",
+        "non_compliant": "The vendor may retain the data indefinitely or refuses deletion.",
+        "ambiguous": "Deletion is mentioned without scope, timing, or backup treatment."
+      },
+      "default_risk_level": "high",
+      "human_review_triggers": [
+        "The processor invokes a legal-retention exception",
+        "Data is stored in immutable backups",
+        "Return and deletion options conflict"
+      ],
+      "requires_additional_sources": [
+        "SA_PDPL_IR",
+        "SA_SCC"
+      ],
+      "embedding_text_en": "At the end of processing, the processor should delete or return personal data, address copies and backups, and document any legal retention exception.",
+      "legal_review_status": "pending"
+    },
+    {
+      "policy_id": "DATA-05",
+      "name_en": "Controller and Processor Responsibilities",
+      "name_ar": "تحديد مسؤوليات المتحكم والمعالج",
+      "category": "processor_obligations",
+      "applies_to_contract_types": [
+        "data_processing_agreement",
+        "cloud_service_agreement",
+        "cross_border_transfer_agreement",
+        "employee_data_vendor_agreement",
+        "marketing_data_processing_agreement"
+      ],
+      "source_support": "partial",
+      "source_references": [
+        {
+          "document_id": "SA_PDPL",
+          "article": "1(18)-(19)",
+          "basis_summary": "The Law defines the Controller and Processor roles."
+        },
+        {
+          "document_id": "SA_PDPL",
+          "article": "8",
+          "basis_summary": "The Controller must select Processors that provide necessary guarantees and monitor their compliance."
+        }
+      ],
+      "contract_requirement_en": "The contract must identify the Controller and Processor, define their instructions and responsibilities, and state that the Processor acts for the benefit and on behalf of the Controller.",
+      "contract_requirement_ar": "يجب أن يحدد العقد المتحكم والمعالج، ويوضح التعليمات والمسؤوليات، وينص على أن المعالج يعمل لمصلحة المتحكم وبالنيابة عنه.",
+      "required_evidence": [
+        "Identification of Controller and Processor",
+        "Documented processing instructions",
+        "Scope, nature, duration, and purposes of processing",
+        "Allocation of security, breach, rights-request, deletion, and transfer duties"
+      ],
+      "non_compliance_indicators": [
+        "roles are not defined",
+        "the processor may determine purposes independently",
+        "the vendor has no documented instructions",
+        "all compliance responsibility is excluded"
+      ],
+      "decision_rule": {
+        "compliant": "Roles and principal responsibilities are clearly allocated.",
+        "missing": "Controller and Processor roles are not identified.",
+        "non_compliant": "The agreement contradicts the stated roles or removes essential Processor obligations.",
+        "ambiguous": "The vendor acts partly as Processor and partly as independent Controller without separation."
+      },
+      "default_risk_level": "high",
+      "human_review_triggers": [
+        "Joint Controller or independent Controller language appears",
+        "The vendor uses data for its own purposes",
+        "The contract involves multiple affiliated processors"
+      ],
+      "requires_additional_sources": [
+        "SA_PDPL_IR",
+        "SA_SCC"
+      ],
+      "embedding_text_en": "The contract should identify controller and processor roles, describe documented instructions, and allocate responsibilities for security, breaches, data subject rights, deletion, and transfers.",
+      "legal_review_status": "pending"
+    },
+    {
+      "policy_id": "DATA-06",
+      "name_en": "Personal Data Breach Management",
+      "name_ar": "إجراءات التعامل مع اختراق البيانات الشخصية",
+      "category": "breach_management",
+      "applies_to_contract_types": [
+        "data_processing_agreement",
+        "cloud_service_agreement",
+        "data_sharing_agreement",
+        "cross_border_transfer_agreement",
+        "employee_data_vendor_agreement",
+        "marketing_data_processing_agreement"
+      ],
+      "source_support": "partial",
+      "source_references": [
+        {
+          "document_id": "SA_PDPL",
+          "article": "19",
+          "basis_summary": "Necessary organizational, administrative and technical measures must protect Personal Data."
+        },
+        {
+          "document_id": "SA_PDPL",
+          "article": "20",
+          "basis_summary": "The Controller must notify the Competent Authority and, in qualifying cases, the Data Subject of a breach."
+        }
+      ],
+      "contract_requirement_en": "The Processor must promptly notify the Controller of a suspected or confirmed Personal Data breach, provide required incident information, preserve evidence, cooperate with investigation, and support notifications.",
+      "contract_requirement_ar": "يجب على المعالج إشعار المتحكم فورًا بأي اختراق مشتبه أو مؤكد للبيانات الشخصية، وتقديم معلومات الحادث وحفظ الأدلة والتعاون في التحقيق ودعم الإشعارات المطلوبة.",
+      "required_evidence": [
+        "A Processor-to-Controller breach notification obligation",
+        "A notification deadline or prompt-notification standard",
+        "Required incident details",
+        "Containment, investigation, remediation, and cooperation duties"
+      ],
+      "non_compliance_indicators": [
+        "the vendor has no duty to report incidents",
+        "notification is optional",
+        "the vendor may delay notice until its investigation is complete",
+        "the vendor is not required to cooperate"
+      ],
+      "decision_rule": {
+        "compliant": "Prompt notification and cooperation requirements are defined.",
+        "missing": "No breach-management clause exists.",
+        "non_compliant": "The vendor disclaims notification or cooperation duties.",
+        "ambiguous": "The contract requires notice but gives no timing, content, or cooperation standard."
+      },
+      "default_risk_level": "critical",
+      "human_review_triggers": [
+        "No exact notification time is specified",
+        "The vendor controls whether the incident is considered reportable",
+        "Subprocessor incidents are excluded"
+      ],
+      "requires_additional_sources": [
+        "SA_PDPL_IR",
+        "SA_SCC",
+        "SA_DMPDPS"
+      ],
+      "embedding_text_en": "The processor should notify the controller promptly of personal data breaches and provide incident details, containment, evidence preservation, investigation support, remediation, and regulatory-notification assistance.",
+      "legal_review_status": "pending"
+    },
+    {
+      "policy_id": "DATA-07",
+      "name_en": "Restricted Appointment of Subprocessors",
+      "name_ar": "تقييد تعيين المعالجين الفرعيين",
+      "category": "subprocessors",
+      "applies_to_contract_types": [
+        "data_processing_agreement",
+        "cloud_service_agreement",
+        "cross_border_transfer_agreement",
+        "employee_data_vendor_agreement",
+        "marketing_data_processing_agreement"
+      ],
+      "source_support": "partial",
+      "source_references": [
+        {
+          "document_id": "SA_PDPL",
+          "article": "8",
+          "basis_summary": "The Law requires necessary Processor guarantees and refers to controls for subsequent contracts conducted by the Processor."
+        }
+      ],
+      "contract_requirement_en": "The Processor must not appoint a subprocessor without the required authorization or notice, must impose equivalent data-protection obligations, and remains responsible for the subprocessor.",
+      "contract_requirement_ar": "يجب ألا يعيّن المعالج معالجًا فرعيًا دون التصريح أو الإشعار المطلوب، وأن يفرض عليه التزامات حماية بيانات مكافئة، مع بقاء المعالج مسؤولًا عنه.",
+      "required_evidence": [
+        "Prior specific or general written authorization",
+        "Advance notice of subprocessor changes",
+        "Equivalent contractual obligations for subprocessors",
+        "Processor responsibility for subprocessor performance"
+      ],
+      "non_compliance_indicators": [
+        "the vendor may appoint any third party without notice",
+        "subprocessors have no equivalent obligations",
+        "the vendor is not liable for subprocessors",
+        "the customer has no objection mechanism"
+      ],
+      "decision_rule": {
+        "compliant": "Authorization, notice, equivalent duties, and responsibility are addressed.",
+        "missing": "Subprocessors are not addressed.",
+        "non_compliant": "The vendor may appoint subprocessors without controls or disclaims responsibility.",
+        "ambiguous": "General authorization exists but notice or objection rights are unclear."
+      },
+      "default_risk_level": "high",
+      "human_review_triggers": [
+        "A large dynamic subprocessor list is incorporated by URL",
+        "Subprocessors are outside the Kingdom",
+        "Critical processing is delegated"
+      ],
+      "requires_additional_sources": [
+        "SA_PDPL_IR",
+        "SA_SCC"
+      ],
+      "embedding_text_en": "Subprocessors should require authorization or notice, equivalent data-protection obligations, and continuing processor responsibility for their processing activities.",
+      "legal_review_status": "pending"
+    },
+    {
+      "policy_id": "DATA-08",
+      "name_en": "Audit and Compliance Verification Rights",
+      "name_ar": "تمكين المتحكم من التدقيق والتحقق من الامتثال",
+      "category": "audit_and_accountability",
+      "applies_to_contract_types": [
+        "data_processing_agreement",
+        "cloud_service_agreement",
+        "cross_border_transfer_agreement",
+        "employee_data_vendor_agreement",
+        "marketing_data_processing_agreement"
+      ],
+      "source_support": "partial",
+      "source_references": [
+        {
+          "document_id": "SA_PDPL",
+          "article": "8",
+          "basis_summary": "The Controller must monitor the Processor's compliance."
+        },
+        {
+          "document_id": "SA_PDPL",
+          "article": "31",
+          "basis_summary": "The Controller must maintain processing records for accountability."
+        }
+      ],
+      "contract_requirement_en": "The Processor must provide information reasonably necessary to demonstrate compliance and permit proportionate audits, assessments, or independent assurance reviews.",
+      "contract_requirement_ar": "يجب على المعالج تقديم المعلومات اللازمة بصورة معقولة لإثبات الامتثال، والسماح بعمليات تدقيق أو تقييم أو ضمان مستقل متناسبة.",
+      "required_evidence": [
+        "A right to obtain compliance information",
+        "A right to conduct or commission audits",
+        "Access to relevant policies, certifications, and reports",
+        "Corrective-action obligations for identified gaps"
+      ],
+      "non_compliance_indicators": [
+        "no audit rights",
+        "the vendor may refuse all compliance information",
+        "certification is the sole remedy without exception",
+        "audit findings create no remediation duty"
+      ],
+      "decision_rule": {
+        "compliant": "Reasonable verification and audit mechanisms are available.",
+        "missing": "No compliance-verification mechanism exists.",
+        "non_compliant": "The vendor excludes all audit and evidence rights.",
+        "ambiguous": "Only limited certifications are offered without access for material incidents."
+      },
+      "default_risk_level": "medium",
+      "human_review_triggers": [
+        "Audit rights are heavily limited by cost, timing, or confidentiality",
+        "The vendor offers only self-attestation",
+        "A regulated or high-risk data category is involved"
+      ],
+      "requires_additional_sources": [
+        "SA_PDPL_IR",
+        "SA_SCC",
+        "SA_DMPDPS"
+      ],
+      "embedding_text_en": "The processor should provide evidence of compliance and allow proportionate audits, assessments, independent assurance reviews, and remediation of identified deficiencies.",
+      "legal_review_status": "pending"
+    },
+    {
+      "policy_id": "DATA-09",
+      "name_en": "Cross-Border Transfer Locations and Safeguards",
+      "name_ar": "تحديد مواقع نقل البيانات خارج المملكة وضماناتها",
+      "category": "cross_border_transfer",
+      "applies_to_contract_types": [
+        "cloud_service_agreement",
+        "data_sharing_agreement",
+        "cross_border_transfer_agreement",
+        "employee_data_vendor_agreement",
+        "marketing_data_processing_agreement"
+      ],
+      "source_support": "partial",
+      "source_references": [
+        {
+          "document_id": "SA_PDPL",
+          "article": "13(4)",
+          "basis_summary": "Data Subjects must be informed whether Personal Data will be transferred, disclosed, or processed outside the Kingdom."
+        },
+        {
+          "document_id": "SA_PDPL",
+          "article": "29",
+          "basis_summary": "Transfers outside the Kingdom are limited to permitted purposes and must satisfy protection and minimization conditions, subject to Regulations."
+        },
+        {
+          "document_id": "SA_PDPL",
+          "article": "31(5)",
+          "basis_summary": "Processing records must state whether Personal Data is transferred or disclosed outside the Kingdom."
+        }
+      ],
+      "contract_requirement_en": "The contract must identify whether cross-border processing occurs, define the permitted destinations or transfer mechanism, limit transferred data to what is necessary, and apply the required safeguards.",
+      "contract_requirement_ar": "يجب أن يحدد العقد ما إذا كانت المعالجة أو عمليات النقل تتم خارج المملكة، وأن يوضح الوجهات أو آلية النقل والضمانات المطلوبة، مع قصر البيانات المنقولة على الحد اللازم.",
+      "required_evidence": [
+        "A statement on whether data leaves the Kingdom",
+        "Permitted countries, regions, hosting locations, or a controlled location list",
+        "The applicable transfer mechanism and safeguards",
+        "A data-minimization requirement for transfers",
+        "Controls for subsequent transfers"
+      ],
+      "non_compliance_indicators": [
+        "data may be stored in any country",
+        "the vendor may change locations without notice",
+        "no transfer safeguard is identified",
+        "unrestricted onward transfers"
+      ],
+      "decision_rule": {
+        "compliant": "Locations or a controlled mechanism and applicable safeguards are defined.",
+        "missing": "The contract does not state whether data leaves the Kingdom.",
+        "non_compliant": "Unrestricted global transfers or onward transfers are permitted.",
+        "ambiguous": "The contract refers to global infrastructure without identifying locations or safeguards."
+      },
+      "default_risk_level": "critical",
+      "human_review_triggers": [
+        "The destination or transfer mechanism is unclear",
+        "Standard Contractual Clauses are referenced but not attached",
+        "Sensitive Data or large-scale transfers are involved",
+        "The vendor may change hosting regions automatically"
+      ],
+      "requires_additional_sources": [
+        "SA_TRANSFER_REG",
+        "SA_SCC",
+        "SA_PDPL_IR"
+      ],
+      "embedding_text_en": "Cross-border processing should identify whether personal data leaves Saudi Arabia, define permitted locations or transfer mechanisms, restrict onward transfers, minimize transferred data, and apply required safeguards.",
+      "legal_review_status": "pending"
+    },
+    {
+      "policy_id": "DATA-10",
+      "name_en": "Support for Data Subject Rights Requests",
+      "name_ar": "التعامل مع طلبات أصحاب البيانات",
+      "category": "data_subject_rights",
+      "applies_to_contract_types": [
+        "data_processing_agreement",
+        "cloud_service_agreement",
+        "data_sharing_agreement",
+        "cross_border_transfer_agreement",
+        "employee_data_vendor_agreement",
+        "marketing_data_processing_agreement"
+      ],
+      "source_support": "partial",
+      "source_references": [
+        {
+          "document_id": "SA_PDPL",
+          "article": "4",
+          "basis_summary": "Data Subjects have rights to information, access, obtain data, correction or update, and destruction in applicable cases."
+        },
+        {
+          "document_id": "SA_PDPL",
+          "article": "17",
+          "basis_summary": "Corrections, completions, or updates must be communicated to entities to which the data was transferred."
+        },
+        {
+          "document_id": "SA_PDPL",
+          "article": "21",
+          "basis_summary": "The Controller must respond to Data Subject rights requests according to the Regulations."
+        }
+      ],
+      "contract_requirement_en": "The Processor must promptly assist the Controller in locating, accessing, exporting, correcting, updating, restricting, or deleting Personal Data needed to respond to Data Subject requests.",
+      "contract_requirement_ar": "يجب على المعالج مساعدة المتحكم فورًا في تحديد البيانات والوصول إليها وتوفيرها وتصحيحها وتحديثها وتقييدها أو حذفها بالقدر اللازم للاستجابة لطلبات أصحاب البيانات.",
+      "required_evidence": [
+        "An obligation to forward requests received directly by the Processor",
+        "Assistance with access, export, correction, update, and destruction",
+        "A response or cooperation time frame",
+        "Identity-verification and secure-delivery controls"
+      ],
+      "non_compliance_indicators": [
+        "the vendor has no duty to assist",
+        "requests may be ignored",
+        "assistance is entirely discretionary",
+        "data cannot be exported, corrected, or deleted"
+      ],
+      "decision_rule": {
+        "compliant": "The Processor must forward and assist with rights requests within a defined or prompt period.",
+        "missing": "No rights-request assistance clause exists.",
+        "non_compliant": "The vendor refuses or excludes assistance.",
+        "ambiguous": "General cooperation is stated without specifying supported rights or timing."
+      },
+      "default_risk_level": "high",
+      "human_review_triggers": [
+        "The service architecture prevents deletion or correction",
+        "The processor receives requests directly from Data Subjects",
+        "Multiple processors must coordinate the request"
+      ],
+      "requires_additional_sources": [
+        "SA_PDPL_IR",
+        "SA_SCC"
+      ],
+      "embedding_text_en": "The processor should assist the controller with data subject rights requests, including access, export, correction, update, restriction, deletion, secure delivery, and forwarding of requests received directly.",
+      "legal_review_status": "pending"
+    }
+  ]
+}
