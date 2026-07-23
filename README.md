@@ -1,5 +1,5 @@
-# CAPSTONE AAASE 
 # Data Processing Contract Auditor 
+### Capstone Project for the Advanced Agentic AI Systems Engineering (AAASE) Program
 
 An AI agent that reviews data-processing contracts against an initial SDAIA-derived regulatory policy baseline and optional company-specific policies, then produces traceable compliance findings with evidence, risk level, recommendations, and human-review routing.
 
