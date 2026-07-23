@@ -223,16 +223,9 @@ The repository includes:
 sdaia_pdpl_contract_audit_policies_v1.json
 ```
 
-Dataset validation reports:
+sdaia_pdpl_contract_audit_policies_v1.json contains 38 active contract controls derived from the Saudi Personal Data Protection Law, issued by SDAIA.
 
-- **38** generated policies.
-- **21** directly supported controls.
-- **17** partially supported controls.
-- **65** extracted source provisions.
-- **37** processed source articles.
-- Valid JSON with no duplicate policy/provision IDs reported.
-
-The current dataset was derived only from the attached English Saudi Personal Data Protection Law document. Other identifiers—such as the Implementing Regulations, transfer regulation, Standard Contractual Clauses, and data-management standards—are pointers for future expansion and were not reviewed in this dataset.
+These are operational controls, not legal opinions. The dataset is marked pending_legal_review and must be validated by a qualified legal or privacy specialist before any real-world use.
 
 ---
 
