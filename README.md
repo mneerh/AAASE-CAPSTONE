@@ -109,39 +109,33 @@ The backend currently returns a verdict and justification. It does **not** calcu
 
 ## System Architecture — Current Implementation
 
+## System Architecture
+
 ```mermaid
 flowchart TD
-    U[User / Browser] --> API[FastAPI service<br/>GET /<br/>POST /audit<br/>GET /health<br/>GET /metrics<br/>GET /audit-trail/{run_id}]
+    U["User uploads PDF"] --> API["FastAPI"]
 
-    API --> G{Input security guard<br/>file exists<br/>.pdf extension<br/>maximum 20 MB}
-    G -->|Rejected| E[HTTP 422 response]
-    G -->|Approved| M[Optional MinIO upload]
-    M --> R[run_audit]
-    G -->|MinIO disabled| R
+    API --> SG{"Security Guard"}
+    SG -->|Rejected| B["Block Request"]
+    SG -->|Approved| LG
 
-    subgraph LG[LangGraph workflow]
-        S([START]) --> P[pdf_parser]
-        P --> A[compliance_analysis_agent]
-        A --> V[reviewer_evaluator]
-        V --> Q{review_gate}
-        Q -->|score below threshold<br/>and retry budget remains| A
-        Q -->|quality accepted<br/>or retry cap reached| GR[generate_report]
-        GR --> X([END])
+    subgraph LG["LangGraph Workflow"]
+        P["PDF Parser"] --> A["Compliance Analysis Agent"]
+        A --> R["Reviewer Agent"]
+        R --> G{"Quality Gate"}
+        G -->|Retry| A
+        G -->|Accepted| O["Verdict & Report"]
     end
 
-    R --> S
+    POL["SDAIA-Derived Policy Dataset"] --> A
+    LLM["LLM / Mock Model"] <--> A
+    LLM <--> R
 
-    J[(SDAIA policy JSON<br/>38 generated controls)] --> A
-    LLM[FakeChatModel when MOCK=1<br/>or OpenRouter ChatOpenAI when MOCK=0] <--> A
-    LLM <--> V
+    API -.-> M["MinIO Storage"]
+    A -.-> DB["PostgreSQL Audit Trail"]
+    API -.-> PM["Prometheus Metrics"]
 
-    A --> PG[(PostgreSQL audit_trail<br/>one inserted row per policy evaluation)]
-    GR --> RF[(Local reports/{run_id}.json)]
-    X --> API
-    API --> U
-
-    API -.-> PM[Prometheus metrics]
-    R -.-> LOG[Structured JSON logs by run_id]
+    O --> API
 ```
 
 ### Important architecture clarification
