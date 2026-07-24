@@ -5,6 +5,9 @@ An AI agent that reviews data-processing contracts against an initial SDAIA-deri
 
 > **Disclaimer:** This project supports contract review and does not replace professional legal or privacy assessment.
 
+### Interactive Presentation
+
+▶️ [**View the Live Presentation**](https://mneerh.github.io/AAASE-CAPSTONE/)
 ---
 
 ## Team
@@ -247,7 +250,26 @@ These are operational controls, not legal opinions. The dataset is marked pendin
 ## Repository Structure
 
 The current repository contains:
-
+```text
+AAASE-CAPSTONE/
+├── UI _Outputs/
+│   ├── Approved.png
+│   ├── Human Review.png
+│   └── Not Approved.png
+│
+├── docs/
+│   ├── index.html
+│   ├── script.js
+│   └── styles.css
+│
+├── .env.example
+├── .gitignore
+├── Dockerfile
+├── README.md
+├── capstone_contract_audit_v2.py
+├── docker-compose.yml
+├── requirements.txt
+└── sdaia_pdpl_contract_audit_policies_v1.json
 ---
 
 ## How to Run
